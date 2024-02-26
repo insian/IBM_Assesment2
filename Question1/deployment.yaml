@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myfirstapp
+  labels:
+    app: myfirstapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myfirstapp
+  template:
+    metadata:
+      labels:
+        app: myfirstapp
+    spec:
+      containers:
+      - name: myfirstapp
+        image: sohampatra1512/myfirstapp:v0.0.1
+        ports:
+        - containerPort: 5000

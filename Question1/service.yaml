@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myfirstapp-service
+  namespace: default
+spec:
+  selector:
+    app: myfirstapp
+  type: NodePort # Adjust type as needed (e.g., NodePort)
+  ports:
+  - protocol: TCP
+    port: 80 # Adjust port if needed
+    targetPort: 5000 #container port
